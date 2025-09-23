@@ -2,10 +2,13 @@
 
 ## Project Description
 
-This is a draft pet project for testing Generative AI on different software engineering tasks. It is planned to evolve and grow over time. Specifically, this repo will be a .NET playground. As for now, we only have the Angular application as a front-end, but in the future, we plan to extend it to other technologies. The application's legend is based on the sports-hub application description from the following repo: [Sports-Hub](https://github.com/dark-side/sports-hub).
+This is a draft pet project for testing Generative AI on different software engineering tasks. It is planned to evolve and grow over time. Specifically, this repo will be a .NET playground.
+
+The application's legend is based on the sports-hub application description from the following repo: [Sports-Hub](https://github.com/dark-side/sports-hub).
 
 ## Available Front-End applications
 - [Angular](https://github.com/dark-side/sports_hub_angular_skeleton)
+- [React.js](https://github.com/dark-side/sports_hub_react_skeleton)
 
 ## Dependencies
 
@@ -13,6 +16,7 @@ This is a draft pet project for testing Generative AI on different software engi
 - Docker Compose
 
 The mentioned dependencies can be installed using the official documentation [here](https://docs.docker.com/compose/install/).
+[Podman](https://podman-desktop.io/docs/compose) can be used as an alternative to Docker.
 
 ## Setup and Running the Application
 
@@ -27,10 +31,10 @@ git clone https://github.com/dark-side/sports_hub_angular_skeleton.git
 
 ### Run Docker Compose
 
-Navigate to the back-end application directory and run:
+Navigate to the back-end application directory and run (`-d` for detached mode to run in the background):
 
 ```sh
-docker compose up
+docker compose up -d
 ```
 
 ### Attach to the Backend Container
