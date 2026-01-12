@@ -40,7 +40,7 @@ public class ArticlesController : ControllerBase
     public async Task<IActionResult> CreateArticle(CreateArticleRequest request)
     {
         var result = await _articlesService.CreateArticle(request);
-        return Ok(result);
+        return StatusCode(201, result);
     }
 
     [Authorize]
@@ -59,5 +59,19 @@ public class ArticlesController : ControllerBase
         var result = await _articlesService.UpdateArticle(articleId, request);
 
         return result is null ? NotFound() : Ok(result);
+    }
+
+    [Authorize]
+    [HttpDelete("{articleId}")]
+    public async Task<IActionResult> DeleteArticle(int articleId)
+    {
+        var result = await _articlesService.DeleteArticle(articleId);
+
+        if (!result)
+        {
+            return NotFound();
+        }
+
+        return NoContent();
     }
 }
