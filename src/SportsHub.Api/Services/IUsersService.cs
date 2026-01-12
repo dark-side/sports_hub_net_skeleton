@@ -1,4 +1,4 @@
-using SportsHub.Api.Models.Users;
+using SportsHub.Api.Models;
 
 namespace SportsHub.Api.Services;
 
