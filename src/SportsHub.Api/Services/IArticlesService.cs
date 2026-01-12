@@ -1,4 +1,4 @@
-﻿using SportsHub.Api.Models.Articles;
+using SportsHub.Api.Models.Articles;
 
 namespace SportsHub.Api.Services;
 
@@ -8,4 +8,5 @@ public interface IArticlesService
     Task<ArticleResponse[]> GetArticles();
     Task<ArticleResponse> GetArticle(int articleId);
     Task<ArticleResponse> UpdateArticle(int articleId, UpdateArticleRequest request);
+    Task<bool> DeleteArticle(int articleId);
 }
