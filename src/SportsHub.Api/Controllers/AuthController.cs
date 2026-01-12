@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SportsHub.Api.Models.Auth;
 using IAuthorizationService = SportsHub.Api.Services.IAuthorizationService;
@@ -16,7 +16,7 @@ public class AuthController : ControllerBase
         _authService = authService;
     }
 
-    [HttpPost("/users")]
+    [HttpPost("/users/registrations")]
     public async Task<IActionResult> SignUp([FromBody] SignupRequest signupRequest)
     {
         var result = await _authService.SignUp(signupRequest);
@@ -25,7 +25,7 @@ public class AuthController : ControllerBase
             return BadRequest(new { Errors = result.Error });
         }
 
-        return Ok(result.Value);
+        return StatusCode(201, result.Value);
     }
 
     [HttpPost("sign_in")]
